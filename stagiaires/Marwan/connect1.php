@@ -15,6 +15,9 @@ try {
     $connectPDO->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     */
 }catch(Exception $e){
+    if($e->getCode()===1045):
+        echo"Mauvais nom d'utilisateur";
+    endif;
     die($e->getMessage());
 
 }
