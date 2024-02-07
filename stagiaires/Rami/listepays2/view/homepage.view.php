@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>listepays</title>
+    <title>Listepays</title>
 </head>
 <body>
     <h1>Listepays</h1>
-    <h2>Liste de tous les pays du monde </h2>
-    <h3>Nombre de pays: <?=$countQuery?></h3>
-    <p><code>Utilisation du while sur un PDOStatement :
-        while($item=$query->fetch(PDO::FETCH_ASSOC)){
-            echo "<p>$item[nom]</p>";
-        }
+    <h2>Liste de tous les pays du monde</h2>
+    <h3>Nombre de pays : <?=$countQuery?></h3>
+    <p><pre><code>Utilisation du foreach pour afficher le tableau des pays :
+    </code></pre></p>
 
-    </code></p>
-    <?php var_dump($query)?>
+    <?php //var_dump($allCountries)?>
 
-    <h3>Liste des pays</h3>
+    <h4>Liste des pays</h4>
+    <p>
     <?php
-    //while liste chaque élément du PDOStatementavec le fetch alternative au FetchAll et foreach
-    
-    while($item=$query->fetch(PDO::FETCH_ASSOC)){
-            echo "<p>$item[nom]</p>";}
-            ?>
-    
+    foreach($allCountries as $countries):
+    ?>
+    <p><?=$countries['nom'] ?></p>
+    <?php
+    endforeach;
+    ?>
+    </p>
 </body>
 </html>
